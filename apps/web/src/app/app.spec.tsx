@@ -1,7 +1,13 @@
 import { render } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
+
+// Mock the 3D engine to avoid pulling in heavy WebGL deps during tests
+vi.mock('@penguin-surf/game-engine', () => ({
+  GameEngine: () => <div data-testid="game-engine" />,
+}));
 
 describe('App', () => {
   it('should render successfully', () => {
@@ -13,15 +19,12 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
-    const { getAllByText } = render(
+  it('should show the main menu prompt', () => {
+    const { getByText } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
-    expect(
-      getAllByText(new RegExp('Welcome @penguin-surf-game/web', 'gi')).length >
-        0
-    ).toBeTruthy();
+    expect(getByText('Start Your Adventure')).toBeTruthy();
   });
 });

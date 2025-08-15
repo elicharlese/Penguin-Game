@@ -7,7 +7,7 @@ interface GameUIProps {
 }
 
 export const GameUI: React.FC<GameUIProps> = ({ gameMode, playerId }) => {
-  const { player, currentWave, performTrick, activateSpeedBoost } = GameStore.useStore();
+  const { player, currentWave, performTrick, activateSpeedBoost, toggleCustomization, toggleShop, toggleLeaderboard, setGameMode } = GameStore.useStore();
   
   // Debug logging to help identify issues
   React.useEffect(() => {
@@ -64,19 +64,25 @@ export const GameUI: React.FC<GameUIProps> = ({ gameMode, playerId }) => {
 
         {gameMode === 'beach' && (
           <div className="flex space-x-4">
-            <button className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
+            <button onClick={toggleCustomization} className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
               <span className="flex items-center space-x-2">
                 <span>🎨</span>
                 <span>Customize</span>
               </span>
             </button>
-            <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
+            <button onClick={toggleShop} className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
               <span className="flex items-center space-x-2">
                 <span>🛍️</span>
                 <span>Shop</span>
               </span>
             </button>
-            <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
+            <button onClick={toggleLeaderboard} className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
+              <span className="flex items-center space-x-2">
+                <span>🏆</span>
+                <span>Leaderboard</span>
+              </span>
+            </button>
+            <button onClick={() => setGameMode('surfing')} className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg backdrop-blur-sm border border-white/20">
               <span className="flex items-center space-x-2">
                 <span>🏄</span>
                 <span>Go Surfing</span>

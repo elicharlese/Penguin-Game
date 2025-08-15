@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useBox } from '@react-three/cannon';
-import { Mesh, Group } from 'three';
+import { Group } from 'three';
 import { Surfboard as SurfboardType } from '../../../types/src';
 
 interface SurfboardProps {
@@ -55,17 +55,17 @@ const SurfboardFins: React.FC = () => (
   <>
     {/* Center fin */}
     <mesh position={[0, -0.05, -0.8]} rotation={[Math.PI / 2, 0, 0]}>
-      <triangleGeometry />
+      <coneGeometry args={[0.08, 0.16, 8]} />
       <meshStandardMaterial color="#333333" />
     </mesh>
     
     {/* Side fins */}
     <mesh position={[-0.3, -0.05, -0.6]} rotation={[Math.PI / 2, 0, 0]}>
-      <triangleGeometry />
+      <coneGeometry args={[0.06, 0.12, 8]} />
       <meshStandardMaterial color="#333333" />
     </mesh>
     <mesh position={[0.3, -0.05, -0.6]} rotation={[Math.PI / 2, 0, 0]}>
-      <triangleGeometry />
+      <coneGeometry args={[0.06, 0.12, 8]} />
       <meshStandardMaterial color="#333333" />
     </mesh>
   </>

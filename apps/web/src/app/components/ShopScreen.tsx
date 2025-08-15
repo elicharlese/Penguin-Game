@@ -1,5 +1,5 @@
 import React from 'react';
-import { GameStore } from '../../../../../libs/game-engine/src/store/GameStore';
+import { GameStore } from '@penguin-surf/game-engine/store/GameStore';
 
 export const ShopScreen: React.FC = () => {
   const { player, updatePlayer, toggleShop } = GameStore.useStore();

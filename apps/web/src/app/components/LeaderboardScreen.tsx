@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GameStore } from '../../../../../libs/game-engine/src/store/GameStore';
+import { GameStore } from '@penguin-surf/game-engine/store/GameStore';
 
 export const LeaderboardScreen: React.FC = () => {
   const { toggleLeaderboard } = GameStore.useStore();

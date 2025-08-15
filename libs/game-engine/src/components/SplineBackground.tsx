@@ -10,7 +10,6 @@ export const SplineBackground: React.FC<SplineBackgroundProps> = ({ sceneUrl }) 
   if (!sceneUrl) return null;
   return (
     <div className="absolute inset-0 -z-10">
-      {/* Spline internally manages its own WebGL canvas */}
       <Spline scene={sceneUrl} />
     </div>
   );

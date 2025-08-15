@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../../atoms/Button';
-import { useGameStore } from '@penguin-surf/game-engine';
+import { GameStore } from '@penguin-surf/game-engine/store/GameStore';
 
 interface GameHeaderProps {
   onMenuClick?: () => void;
@@ -11,7 +11,8 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
   onMenuClick,
   onSettingsClick,
 }) => {
-  const { player, gameMode } = useGameStore();
+  const { player, gameMode } = GameStore.useStore();
+  if (!player) return null;
   
   const getModeLabel = () => {
     switch (gameMode) {
@@ -44,7 +45,7 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
             </div>
             <div>
               <div className="text-sm font-medium">{player.username}</div>
-              <div className="text-xs text-gray-300">Level {player.level}</div>
+              <div className="text-xs text-gray-300">Level {player.stats.level}</div>
             </div>
           </div>
           
