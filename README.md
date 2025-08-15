@@ -1,5 +1,7 @@
 # Penguin Surf Game
 
+[![CI](https://github.com/elicharlese/Penguin-Game/actions/workflows/ci.yml/badge.svg)](https://github.com/elicharlese/Penguin-Game/actions/workflows/ci.yml)
+
 A cross-platform 3D penguin surfing game with VR support built with Nx, React, Three.js, and React Three Fiber.
 
 ## Project Overview
