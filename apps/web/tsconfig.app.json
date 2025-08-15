@@ -11,8 +11,12 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
-    "rootDir": "src"
+    "rootDirs": [".", "../../libs"]
   },
+  "include": [
+    "src/**/*",
+    "../../libs/**/*"
+  ],
   "exclude": [
     "out-tsc",
     "dist",
@@ -31,6 +35,5 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
-  ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  ]
 }

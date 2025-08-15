@@ -1,6 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import * as path from 'path';
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -14,6 +15,14 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@penguin-surf/game-engine': path.resolve(__dirname, '../../libs/game-engine/src'),
+      '@penguin-surf/types': path.resolve(__dirname, '../../libs/types/src'),
+      '@penguin-surf/ui-components': path.resolve(__dirname, '../../libs/ui-components/src'),
+      '@penguin-surf/utils': path.resolve(__dirname, '../../libs/utils/src'),
+    },
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

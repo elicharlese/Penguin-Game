@@ -1,10 +1,19 @@
-# PenguinSurfGame
+# Penguin Surf Game
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A cross-platform 3D penguin surfing game with VR support built with Nx, React, Three.js, and React Three Fiber.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Project Overview
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Penguin Surf Game is an immersive 3D game where players control a customizable penguin character surfing ocean waves. The game features multiple modes including surfing, beach relaxation, and competitions. It supports web, mobile, and VR platforms.
+
+## Features
+
+- 🏄 Realistic 3D surfing physics with procedurally generated waves
+- 🐧 Extensive penguin customization options
+- 🏖️ Beach hut relaxation mode
+- 🏆 Competitive surfing competitions
+- 🥽 VR support for WebXR, Meta Quest, and mobile VR
+- 📱 Cross-platform support (web, mobile, desktop)
 
 ## Run tasks
 
@@ -18,6 +27,12 @@ To create a production bundle:
 
 ```sh
 npx nx build web
+```
+
+To run unit tests:
+
+```sh
+npx nx test web
 ```
 
 To see all available targets to run for a project, run:
